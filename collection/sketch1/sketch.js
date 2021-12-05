@@ -1,11 +1,11 @@
 //Aesthetics
-backgroundCol = "White"
+backgroundCol = "#D9DECF"
 circleCol = "Black"
 
 
 
 function preload(){
-	img = loadImage("pics/che.png")
+	img = loadImage("pics/mlk.jpg")
 }
 
 function setup() {
@@ -13,10 +13,10 @@ function setup() {
 	background(backgroundCol)
 
 
-	rsx = 60; // resolution
+	rsx = 80; // resolution
 
 	//set the sizing for the circle array
-	img.resize(windowWidth/2, 0)
+	img.resize(windowWidth/3, 0)
 	let iw = img.width;
 	let ih = img.height;
 
@@ -27,7 +27,7 @@ function setup() {
 	let di = ceil(iw/rsx);
 
 	//create the circle array
-	cg = new gridOfCircles(windowWidth/4 + di/2,0,cw,ch,di,di);
+	cg = new gridOfCircles(windowWidth/4 + di/2,windowHeight*(1/10),cw,ch,di,di);
 	
 
 
@@ -54,14 +54,11 @@ function setup() {
 	}
 
 	//shrink the appropriate pixels
-	cg.changeDiameters(toBeShrunk, di*(17/20))
+	cg.changeDiameters(toBeShrunk, di*(18/20))
 
 }
 
 function draw() {
-	//image(img, 0,0)
-	//circle(0,0,50)
-	circle(windowWidth,windowHeight, 50)
 
 	img.resize(windowWidth/2, 0)
 	//image(img, windowWidth/4, 0)
